@@ -1,0 +1,50 @@
+/**
+ * Xero MCP — Cloudflare Workers configuration
+ * https://developers.cloudflare.com/workers/wrangler/configuration/
+ */
+{
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"name": "xero-mcp",
+	"main": "src/index.ts",
+	"compatibility_date": "2025-03-10",
+	"compatibility_flags": ["nodejs_compat"],
+	/**
+	 * Secrets (never commit real values):
+	 *   npx wrangler secret put XERO_CLIENT_ID
+	 *   npx wrangler secret put XERO_CLIENT_SECRET
+	 *   npx wrangler secret put COOKIE_ENCRYPTION_KEY
+	 *
+	 * Local: copy .dev.vars.example → .dev.vars
+	 */
+	"migrations": [
+		{
+			"new_sqlite_classes": ["XeroMCP"],
+			"tag": "v1"
+		}
+	],
+	"durable_objects": {
+		"bindings": [
+			{
+				"class_name": "XeroMCP",
+				"name": "MCP_OBJECT"
+			}
+		]
+	},
+	"kv_namespaces": [
+		{
+			"binding": "OAUTH_KV",
+			"id": "00000000000000000000000000000000",
+			"preview_id": "00000000000000000000000000000000"
+		}
+	],
+	"observability": {
+		"enabled": true
+	},
+	"dev": {
+		"port": 8788
+	},
+	"vars": {
+		"MCP_SERVER_NAME": "xero-mcp",
+		"XERO_AUTH_MODE": "web"
+	}
+}

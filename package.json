@@ -1,0 +1,28 @@
+{
+	"name": "xero-mcp",
+	"version": "0.1.0",
+	"private": true,
+	"description": "Remote MCP server for Xero Accounting API — day-to-day AR, AP, banking, payments, and reports with permission-first OAuth.",
+	"scripts": {
+		"deploy": "wrangler deploy",
+		"dev": "wrangler dev",
+		"start": "wrangler dev",
+		"cf-typegen": "wrangler types",
+		"type-check": "tsc --noEmit",
+		"test": "vitest run",
+		"test:watch": "vitest"
+	},
+	"dependencies": {
+		"@cloudflare/workers-oauth-provider": "^0.8.1",
+		"@modelcontextprotocol/sdk": "1.29.0",
+		"agents": "^0.17.1",
+		"hono": "^4.12.27",
+		"zod": "^3.24.2"
+	},
+	"devDependencies": {
+		"@cloudflare/workers-types": "^4.20260628.1",
+		"typescript": "^5.8.2",
+		"vitest": "^3.0.9",
+		"wrangler": "^4.14.0"
+	}
+}

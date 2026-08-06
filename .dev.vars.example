@@ -1,0 +1,14 @@
+# Local-only secrets for `wrangler dev`.
+# Copy to `.dev.vars` and fill in. NEVER commit `.dev.vars` or real values.
+
+# Required
+XERO_CLIENT_ID=<xero app client id>
+XERO_CLIENT_SECRET=<xero app client secret>
+
+# OAuth cookie / session encryption (any long random string)
+#   openssl rand -hex 32
+COOKIE_ENCRYPTION_KEY=<random hex>
+
+# Optional overrides
+# XERO_SCOPES_OVERRIDE=
+# XERO_AUTH_MODE=web
