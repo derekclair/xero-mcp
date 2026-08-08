@@ -1,7 +1,7 @@
 {
 	"name": "xero-mcp",
 	"version": "0.1.0",
-	"private": true,
+	"license": "MIT",
 	"description": "Remote MCP server for Xero Accounting API — day-to-day AR, AP, banking, payments, and reports with permission-first OAuth.",
 	"scripts": {
 		"deploy": "wrangler deploy",

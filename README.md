@@ -135,4 +135,4 @@ Details: [docs/LIMITATIONS.md](docs/LIMITATIONS.md) · tool catalog: [docs/TOOLS
 
 ## License
 
-Private / TBD.
+[MIT](LICENSE) © 2026 Derek Clair
